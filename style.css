@@ -1,0 +1,87 @@
+.body-container {
+  background-color: lightgray;
+  width: 100%;
+}
+
+.nav-container {
+  background-color: white;
+}
+
+.h1-nav {
+  margin: 0;
+  padding: 10px;
+  text-align: center;
+}
+
+.middle-container {
+  display: flex;
+  font-size: 18px;
+}
+
+.middle-left-container {
+  background-color: rgb(216, 215, 215);
+  width: 150px;
+  display: grid;
+  grid-template-rows: 30px 30px 30px;
+  padding-top: 20px;
+}
+
+.menu-item {
+  cursor: pointer;
+  padding: 3px 5px 3px 10px;
+  font-size: 18px;
+}
+
+.active {
+  font-weight: bold;
+  color: #4caf50;
+}
+
+.middle-right-container {
+  background-color: rgb(229, 226, 226);
+  width: 100%;
+}
+
+.input-container {
+  background-color: rgb(229, 226, 226);
+  padding: 20px 5px 15px 5px;
+}
+
+.input-text {
+  padding: 3px 5px 3px 5px;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.add-button {
+  padding: 3px 5px 3px 5px;
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.output-item {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  padding: 3px 5px 3px 5px;
+  margin: 7px;
+  background-color: rgb(200, 200, 200);
+}
+
+.item-text {
+  margin: 0;
+}
+
+.delete-button {
+  font-size: 18px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.done {
+  text-decoration: line-through solid;
+}
+
+.footer-text {
+  margin-top: 20px;
+  padding: 10px;
+  font-style: italic;
+}

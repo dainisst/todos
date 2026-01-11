@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>toDoapp</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="body-container">
+    <div class="nav-container">
+      <h1 class="h1-nav">To do app</h1>
+    </div>
+    <div class="middle-container">
+      <div class="middle-left-container">
+        <span class="menu-item active" data-list="today">todo today</span>
+        <span class="menu-item" data-list="month">todo month</span>
+        <span class="menu-item" data-list="learn">to learn</span>
+        <span class="menu-item" data-list="buy">to buy</span>
+      </div>
+      <div class="middle-right-container">
+        <div class="input-container">
+          <input type="text" class="input-text" placeholder="enter your task here">
+          <button class="add-button">Add</button>
+        </div>
+        <div class="output-container"></div>
+        <div class="footer-container">
+          <p class="footer-text">This is the end of the list</p>
+        </div>
+
+        <script type="module" src="todolists.js"></script>
+</body>
+
+</html>
