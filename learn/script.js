@@ -5,10 +5,10 @@ tabs.forEach(tab => {
   tab.addEventListener("click", () => {
 
     // 1️⃣ remove "active" from all tabs
-    tabs.forEach(t => t.classList.remove("active"));
+    tabs.forEach(t => t.classList.toggle("active", t === tab));
 
     // 2️⃣ add "active" to clicked tab
-    tab.classList.add("active");
+    // tab.classList.add("active");
 
     // 3️⃣ get the tab key from data-tab
     const tabKey = tab.dataset.tab;
