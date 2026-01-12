@@ -5,5 +5,7 @@ console.log(newArr);
 const filtArr = arr.filter(element => element > 3);
 console.log(filtArr);
 const numbers = arr.reduce((accumulator, num) => {
-
-})
+  accumulator[num] = (accumulator[num] || 0) + 1;
+  return accumulator;
+}, {});
+console.log(numbers);
