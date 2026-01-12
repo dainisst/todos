@@ -51,12 +51,16 @@
   padding: 3px 5px 3px 5px;
   font-size: 18px;
   font-family: 'Times New Roman', Times, serif;
+  border-radius: 5px;
+  border-width: 1px;
 }
 
 .add-button {
   padding: 3px 5px 3px 5px;
   font-size: 18px;
   font-family: 'Times New Roman', Times, serif;
+  border-radius: 5px;
+  border-width: 1px;
 }
 
 .output-item {
@@ -65,6 +69,7 @@
   padding: 3px 5px 3px 5px;
   margin: 7px;
   background-color: rgb(200, 200, 200);
+  border-radius: 5px;
 }
 
 .item-text {
@@ -74,6 +79,8 @@
 .delete-button {
   font-size: 18px;
   font-family: 'Times New Roman', Times, serif;
+  border-radius: 5px;
+  border-width: 1px;
 }
 
 .done {
