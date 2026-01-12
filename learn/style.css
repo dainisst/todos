@@ -1,0 +1,19 @@
+.tab {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #4caf50;
+  color: white;
+}
+
+.panel {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.panel.active {
+  display: block;
+}
