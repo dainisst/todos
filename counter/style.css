@@ -1,0 +1,37 @@
+.coutner-container {
+  display: flex;
+  align-items: center;
+}
+
+.title-h1 {
+  text-align: center;
+}
+
+.output-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.output-text {
+  background-color: aquamarine;
+  font-size: 36px;
+  width: 75px;
+  height: 75px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container {
+  text-align: center;
+}
+
+.button {
+  width: 70px;
+  height: 35px;
+  border-radius: 7px;
+  border-width: 1px;
+}
