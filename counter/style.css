@@ -35,3 +35,10 @@
   border-radius: 7px;
   border-width: 1px;
 }
+
+.date {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 20px;
+  color: gray;
+}

@@ -2,6 +2,7 @@ const output = document.querySelector(".output-text");
 const buttons = document.querySelectorAll(".button");
 const dateDiv = document.querySelector(".date");
 let countValue = 0;
+const today = new Date().toISOString().slice(0, 10)
 
 loadCount();
 showCount();
@@ -20,7 +21,7 @@ function showCount() {
 }
 
 function todayDate() {  
-  dateDiv.innerHTML = `${new Date().toISOString().slice(0, 10)}`; // YYYY-MM-DD
+  dateDiv.innerHTML = `last Clicked on ${today}`; // YYYY-MM-DD
 }
 
 buttons.forEach(button => {
