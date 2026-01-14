@@ -1,6 +1,7 @@
 const output = document.querySelector(".output-text");
-let countValue = 0;
 const buttons = document.querySelectorAll(".button");
+const dateDiv = document.querySelector(".date");
+let countValue = 0;
 
 loadCount();
 showCount();
@@ -18,18 +19,23 @@ function showCount() {
   output.innerHTML = countValue;
 }
 
+function todayDate() {  
+  dateDiv.innerHTML = `${new Date().toISOString().slice(0, 10)}`; // YYYY-MM-DD
+}
+
 buttons.forEach(button => {
   button.addEventListener("click", () => {
     if (button.dataset.list === "plus") {
-      countValue += 1;
+      countValue++;
     }
     if (button.dataset.list === "minus") {
-      countValue -= 1;
+      countValue--;
     }
     if (button.dataset.list === "reset") {
       countValue = 0;
     }
     saveCount();
     showCount();
+    todayDate();
   })
 })
