@@ -28,10 +28,10 @@ function saveDate() {
 }
 
 function getToday() {
-  return new Date().toISOString().slice(0, 16);
+  return new Date().toLocaleString("en-GB");
 }
 
-function showClickedDate() {  
+function showClickedDate() {
   dateDiv.innerHTML = `last Clicked on ${savedDate}`;
 }
 
