@@ -2,10 +2,11 @@ const output = document.querySelector(".output-text");
 const buttons = document.querySelectorAll(".button");
 const dateDiv = document.querySelector(".date");
 let countValue = 0;
-const today = new Date().toISOString().slice(0, 10)
+let savedDate = localStorage.getItem("lastClickedDate");
 
 loadCount();
 showCount();
+showClickedDate();
 
 function loadCount() {
   const saved = localStorage.getItem("counter");
@@ -20,8 +21,18 @@ function showCount() {
   output.innerHTML = countValue;
 }
 
-function todayDate() {  
-  dateDiv.innerHTML = `last Clicked on ${today}`; // YYYY-MM-DD
+function saveDate() {
+  const today = getToday();
+  localStorage.setItem("lastClickedDate", today);
+  savedDate = today;
+}
+
+function getToday() {
+  return new Date().toISOString().slice(0, 16);
+}
+
+function showClickedDate() {  
+  dateDiv.innerHTML = `last Clicked on ${savedDate}`;
 }
 
 buttons.forEach(button => {
@@ -37,6 +48,7 @@ buttons.forEach(button => {
     }
     saveCount();
     showCount();
-    todayDate();
+    saveDate();
+    showClickedDate();
   })
 })
