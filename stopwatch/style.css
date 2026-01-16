@@ -1,15 +1,22 @@
-.main-container {
-  /* display: flex; */
-}
-
 .title {
   text-align: center;
 }
 
 .stopwatch-output {
-  display: flex;
+  display: grid;
   justify-content: center;
+  align-items: center;
   font-size: 40px;
+  width: 100%;
+}
+
+.output-text {
+  width: 200px;
+  height: 80px;
+  background-color: aquamarine;
+  border-radius: 15px;
+  display: grid;
+  place-items: center;
 }
 
 .buttons-container {

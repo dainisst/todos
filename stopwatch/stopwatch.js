@@ -1,4 +1,4 @@
-const output = document.querySelector(".stopwatch-output");
+const output = document.querySelector(".output-text");
 const startButton = document.querySelector(".start");
 const stopButton = document.querySelector(".stop");
 const resetButton = document.querySelector(".reset");
