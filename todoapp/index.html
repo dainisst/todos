@@ -20,20 +20,37 @@
         <span class="menu-item" data-list="learn">tu duLearn</span>
         <span class="menu-item" data-list="buy">tu duBuy</span>
         <span class="menu-item" data-list="sports">tu duSport</span>
-        <span class="menu-item" data-list="sports">tu stopWatch</span>
-        <span class="menu-item" data-list="sports">tu counter</span>
+        <span class="menu-item" data-list="stopwatch">tu stopWatch</span>
+        <span class="menu-item" data-list="counter">tu counter</span>
       </div>
       <div class="middle-right-container">
-        <div class="input-container">
-          <input type="text" class="input-text" placeholder="enter your task here">
-          <button class="add-button">Add</button>
-        </div>
-        <div class="output-container"></div>
-        <div class="footer-container">
-          <p class="footer-text">This is the end of the list</p>
-        </div>
 
-        <script type="module" src="todolists.js"></script>
+        <div class="todo-contaier">
+          <div class="input-container">
+            <input type="text" class="input-text" placeholder="enter your task here">
+            <button class="add-button">Add</button>
+          </div>
+          <div class="output-container"></div>
+          <div class="footer-container">
+            <p class="footer-text">This is the end of the list</p>
+          </div>
+        </div>
+        
+        <div class="stopwatch-container hidden">
+          <div class="stopwatch-output">
+            <p class="output-text">00:00:00</p>
+          </div>
+          <div class="buttons-container">
+            <button class="button start">start</button>
+            <button class="button stop">stop</button>
+            <button class="button reset">reset</button>
+          </div>
+        </div>  
+      </div> 
+    </div> 
+  </div>      
+
+  <script type="module" src="todolists.js"></script>
 </body>
 
 </html>
