@@ -22,7 +22,7 @@
   background-color: rgb(216, 215, 215);
   width: 150px;
   display: grid;
-  grid-template-rows: 30px 30px 30px 30px;
+  grid-template-rows: 30px 30px 30px 30px 60px 30px;
   padding-top: 20px;
 }
 
