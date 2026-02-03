@@ -1,0 +1,29 @@
+.counter-output {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+.counter-title {
+    margin-bottom: 0;
+}    
+
+.counter-count {
+    font-size: 28px;
+    width: 100px;
+    height: 80px;
+    background-color: aqua;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-button {
+    width: 90px;
+    height: 35px;
+    border-radius: 7px;
+    border-width: 1px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+}
