@@ -5,9 +5,10 @@ export default class Counter {
         this.incrementButton = container.querySelector(".increment");
         this.decrementButton = container.querySelector(".decrement");
         this.resetButton = container.querySelector(".reset");
-        
+
         this.count = 0;
-        
+
+        this.load();
         this.attachEvents();
         this.render();
     }
@@ -21,18 +22,30 @@ export default class Counter {
     increment() {
         this.count++;
         this.render();
+        this.save();
     }
 
     decrement() {
         if (this.count > 0) {
             this.count--;
             this.render();
+            this.save();
         }
     }
 
     reset() {
         this.count = 0;
         this.render();
+        this.save();
+    }
+
+    save() {
+        localStorage.setItem("counter", JSON.stringify(this.count));
+    }
+
+    load() {
+        const countSaved = JSON.parse(localStorage.getItem("counter"));
+        this.count = countSaved || 0;
     }
 
     render() {
