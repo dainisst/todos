@@ -8,7 +8,7 @@ export default class Counter {
         this.resetButton = container.querySelector(".reset");
 
         this.count = 0;
-        this.savedDate = localStorage.getItem("lastClickedDate");
+        this.savedDate = localStorage.getItem("clickedDate");
 
         this.load();
         this.attachEvents();
@@ -67,7 +67,7 @@ export default class Counter {
 
     saveDate() {
         const today = this.getToday();
-        localStorage.setItem("lastClickeDate", today);
+        localStorage.setItem("clickedDate", today);
         this.savedDate = today;
     }
 
