@@ -1,6 +1,6 @@
 import TodoList from "./todoclass.js";
-import Stopwatch from "./stopwatch.js";
-import Counter from "./counter.js";
+import Stopwatch from "./stopwatch/stopwatch.js";
+import Counter from "./counter/counter.js";
 
 const todoContainer = document.querySelector(".todo-container");
 const stopwatchContainer = document.querySelector(".stopwatch-container");
