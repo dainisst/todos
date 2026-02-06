@@ -6,7 +6,7 @@ export default class Stopwatch {
     this.stopButton = container.querySelector(".stop");
     this.resetButton = container.querySelector(".reset");
 
-    this.seconds = 0;
+    this.offsetSeconds = 0;
     this.interval = null;
     this.startedAt = null;
 
@@ -15,9 +15,10 @@ export default class Stopwatch {
     this.render();
 
     if (this.startedAt) {
-      this.resume();
+      this.startInterval();
     }
   }
+
   attachEvents() {
     this.startButton.addEventListener("click", () => this.start());
     this.stopButton.addEventListener("click", () => this.stop());
@@ -26,52 +27,55 @@ export default class Stopwatch {
 
   start() {
     if (this.interval) return;
-    
+
     this.startedAt = Date.now();
+    this.startInterval();
     this.save();
+  }
 
-    this.interval = setInterval(() => {
-      this.tick();
-    }, 1000);
-
+  startInterval() {
+    this.interval = setInterval(() => this.tick(), 250);
   }
 
   tick() {
-    const now = Date.now();
-    const diff = Math.floor((now - this.startedAt) / 1000);
-    this.seconds += diff;
-    this.startedAt = now;
+    const elapsed = this.offsetSeconds + Math.floor((Date.now() - this.startedAt) / 1000);
 
-    this.save();
-    this.render();
+    this.render(elapsed);
   }
 
   stop() {
     if (!this.interval) return;
 
+    this.offsetSeconds += Math.floor((Date.now() - this.startedAt) / 1000);
+
     clearInterval(this.interval);
     this.interval = null;
     this.startedAt = null;
 
-    this.save();   
+    this.save();
   }
 
   reset() {
-    this.stop();
-    this.seconds = 0;
+    clearInterval(this.interval);
+    this.interval = null;
+    this.offsetSeconds = 0;
+    this.startedAt = null;
+
     this.save();
-    this.render();
+    this.render(0);
   }
 
-  resume() {
-    this.interval = setInterval(() => {
-      this.tick();
-    }, 1000);
+  render(seconds = this.offsetSeconds) {
+    const hrs = String(Math.floor(seconds / 3600)).padStart(2, "0");
+    const mins = String(Math.floor((seconds % 3600) / 60)).padStart(2, "0");
+    const secs = String(seconds % 60).padStart(2, "0");
+
+    this.timeOutput.textContent = `${hrs}:${mins}:${secs}`;
   }
 
   save() {
     localStorage.setItem("stopwatch", JSON.stringify({
-      seconds: this.seconds,
+      offsetSeconds: this.offsetSeconds,
       startedAt: this.startedAt
     }));
   }
@@ -80,16 +84,8 @@ export default class Stopwatch {
     const data = JSON.parse(localStorage.getItem("stopwatch"));
     if (!data) return;
 
-    this.seconds = data.seconds || 0;
+    this.offsetSeconds = data.offsetSeconds || 0;
     this.startedAt = data.startedAt || null;
-  }
-
-  render() {
-    const hrs = String(Math.floor(this.seconds / 3600)).padStart(2, "0");
-    const mins = String(Math.floor((this.seconds % 3600) / 60)).padStart(2, "0");
-    const secs = String(this.seconds % 60).padStart(2, "0");
-
-    this.timeOutput.textContent = `${hrs}:${mins}:${secs}`;
   }
 }
 
